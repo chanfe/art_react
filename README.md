@@ -84,7 +84,8 @@ Outline of Features:
 
 <!-- MockUp of the Application (to be removed) -->
 ## Mock up of the application (to be)
-<!--[![Product Name Screen Shot][product-screenshot]](https://github.com/chingu-voyages/v10-bears-team-03) -->
+
+
 ### Prerequisites
 1. 
 ```
