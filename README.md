@@ -85,7 +85,7 @@ Outline of Features:
 <!-- MockUp of the Application (to be removed) -->
 ## Mock up of the application (to be)
 
-![](assets/MVP/png)
+![](assets/MVP.png)
 
 ### Prerequisites
 1. 
