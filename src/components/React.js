@@ -1,11 +1,11 @@
 import React from 'react';
 
-const React = (props) =>{
+const OReact = (props) =>{
   return(
-    <div>
+    <div class="container">
         <h1>React</h1>
     </div>
   )
 }
 
-export default React
+export default OReact

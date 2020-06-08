@@ -2,8 +2,8 @@ import React from 'react';
 
 const Title = (props) =>{
   return(
-    <div>
-        <h1>Title</h1>
+    <div class="container">
+        <h1>Art Reaction</h1>
     </div>
   )
 }
