@@ -1,10 +1,11 @@
 import React from 'react';
+import { Container } from 'semantic-ui-react'
 
 const Title = (props) =>{
   return(
-    <div class="container">
+    <Container>
         <h1>Art Reaction</h1>
-    </div>
+    </Container>
   )
 }
 

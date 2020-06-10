@@ -8,7 +8,7 @@ import ReactionsList from './components/ReactionsList'
 
 function App() {
   return (
-    <div class="container">
+    <div>
       <Title />
       <Picture />
       <OReact />

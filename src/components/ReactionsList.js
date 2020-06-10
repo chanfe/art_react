@@ -1,10 +1,24 @@
 import React from 'react';
+import { Container, List, Image } from 'semantic-ui-react'
+import ListItems from './ReactionsListItem'
 
 const ReactionsList = (props) =>{
+  const apes = [
+    "hi test",
+    "nothing",
+    "last thing"
+  ]
+
+  const eachTest = apes.map(text => {
+    return <ListItems text={text}/>
+  })
   return(
-    <div class="container">
-        <h1>Reactions List</h1>
-    </div>
+    <Container>
+        <List celled>
+          {eachTest}
+
+        </List>
+    </Container>
   )
 }
 
