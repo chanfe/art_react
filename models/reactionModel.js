@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-const Schema = new mongoose.Schema({
+
+const ReactionSchema = new Schema({
   reaction: {
     type: String,
     required: true,
@@ -15,4 +17,4 @@ const Schema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Reaction', Schema);
+module.exports = mongoose.model('Reaction', ReactionSchema);
