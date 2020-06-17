@@ -10,7 +10,7 @@ exports.getReaction = async (req, res, next) => {
         data: reaction
       });
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })
@@ -27,7 +27,7 @@ exports.addReaction = async (req, res, next) => {
         data: reaction
       });
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })
@@ -46,7 +46,7 @@ exports.updateReaction = async (req, res, next) => {
       );
       return res.status(200).json(newReaction);
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })

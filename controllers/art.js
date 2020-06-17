@@ -10,7 +10,7 @@ exports.getArt = async (req, res, next) => {
         data: art
       });
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })
@@ -27,7 +27,7 @@ exports.addArt = async (req, res, next) => {
         data: art
       });
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })
@@ -46,7 +46,7 @@ exports.updateArt = async (req, res, next) => {
       );
       return res.status(200).json(newArt);
     } catch (error) {
-      res.send(500).json({
+      res.sendStatus(500).json({
         success: false,
         error: 'Server error'
       })

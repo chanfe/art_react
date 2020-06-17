@@ -1,12 +1,12 @@
 const express = require('express');
-const router = express.Router();
+const reactionRouter = express.Router();
 
-const { getArt, addArt, updateArt, deleteArt } = require('../controllers/reaction');
+const { getReaction, addReaction, updateReaction, deleteReaction } = require('../controllers/reaction');
 
-router.route('/')
-  .get(getArt)
-  .post(addArt)
-  .delete(deleteArt)
-  .put(updateArt)
+reactionRouter.route('/')
+  .get(getReaction)
+  .post(addReaction)
+  .delete(deleteReaction)
+  .put(updateReaction)
 
-module.exports = router;
+module.exports = reactionRouter;
