@@ -67,12 +67,15 @@ exports.deleteArt = async (req, res, next) => {
         });
       }
 
-      await art.remove();
+      art.remove();
       return res.status(200).json({
         success: true,
         data: {}
       });
     } catch (error) {
-
+        res.sendStatus(500).json({
+            success: false,
+            error: 'Server error'
+          })
     }
 }

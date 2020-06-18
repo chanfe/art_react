@@ -8,8 +8,5 @@ artRouter.route('/')
   .post(addArt)
   .delete(deleteArt)
   .put(updateArt)
-
-artRouter.route('/:id')
-    .delete(deleteArt)
-
+  
 module.exports = artRouter;
