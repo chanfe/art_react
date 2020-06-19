@@ -18,7 +18,7 @@ exports.getArt = async (req, res, next) => {
 }
 
 // @desc   Get one from Art
-// @route  GET /api/v1/Art
+// @route  GET /api/v1/Art/:id
 exports.showArt = async (req, res, next) => {
     try {
         const art = await Art.findById(req.params.id);
