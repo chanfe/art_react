@@ -20,7 +20,6 @@ exports.getArt = async (req, res, next) => {
 // @desc   Get one from Art
 // @route  GET /api/v1/Art
 exports.showArt = async (req, res, next) => {
-    console.log(req.params.id)
     try {
         const art = await Art.findById(req.params.id);
         if (!art) {
@@ -83,8 +82,6 @@ exports.updateArt = async (req, res, next) => {
 // @route  DELETE /api/v1/Art
 exports.deleteArt = async (req, res, next) => {
     try {
-      console.log(req.body);
-
       const art = await Art.findById(req.body.id);
       if (!art) {
         res.status(404).json({

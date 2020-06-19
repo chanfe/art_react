@@ -16,6 +16,31 @@ exports.getReaction = async (req, res, next) => {
       })
     }
 }
+
+// @desc   Get one from Reaction
+// @route  GET /api/v1/Reaction/:id
+exports.showReaction = async (req, res, next) => {
+    try {
+        const art = await Reaction.findById(req.params.id);
+        if (!art) {
+            res.status(404).json({
+                success: false,
+                error: 'Not Found'
+            });
+        }
+        return res.status(200).json({
+            success: true,
+            data: art
+        });
+        
+    } catch (error) {
+      console.log(error)
+      res.status(500).json({
+        success: false,
+        error: 'Server error'
+      })
+    }
+}
   
 // @desc   Add to Reaction
 // @route  POST /api/v1/Reaction
