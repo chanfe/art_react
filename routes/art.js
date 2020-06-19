@@ -1,7 +1,7 @@
 const express = require('express');
 const artRouter = express.Router();
 
-const { getArt, addArt, updateArt, deleteArt } = require('../controllers/art');
+const { getArt, addArt, updateArt, deleteArt, showArt } = require('../controllers/art');
 
 artRouter.route('/')
   .get(getArt)
@@ -9,4 +9,7 @@ artRouter.route('/')
   .delete(deleteArt)
   .put(updateArt)
   
+artRouter.route('/:id')
+  .get(showArt)
+
 module.exports = artRouter;
