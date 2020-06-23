@@ -78,7 +78,10 @@ Outline of Features:
 
 ### Built With
 * [ReactJS](https://reactjs.org)
-
+* [NodeJS](https://nodejs.org/)
+* [MongoDB](https://www.mongodb.com/)
+* [Express](https://expressjs.com/)
+* [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/)
 
 
 
