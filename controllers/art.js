@@ -39,28 +39,27 @@ exports.randomArt = async (req, res, next) => {
         const url = 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=art'
         const artData = await getData(url)
         const {title, portfolio, artistDisplayName, objectID, primaryImage} = artData
-        console.log("starting find by id")
-        console.log(objectID)
-        const art = await Art.findById({_id: objectID});
-        console.log("art")
-        // if (!art) {
-        //     console.log("inbody")
-        //     let body = {
-        //         "_id": objectID,
-        //         "title": title,
-        //         "description": portfolio,
-        //         "creator": artistDisplayName,
-        //         "imageUrl": primaryImage
-        //     }
-        //     art = await Art.create(body);
-        //     console.log("created new art")
-        // }
+        console.log("starting find by id", objectID)
+        let art = await Art.findById({_id: objectID});
+        if (!art) {
+            console.log("inbody")
+            let body = {
+                "_id": objectID,
+                "title": title,
+                "description": portfolio,
+                "creator": artistDisplayName,
+                "imageUrl": primaryImage
+            }
+            art = await Art.create(body);
+            console.log("created new art")
+        }
         
       return res.status(200).json({
         success: true,
         data: art
       });
     } catch (error) {
+        console.log(error)
       res.status(500).json({
         success: false,
         error: 'Server error'

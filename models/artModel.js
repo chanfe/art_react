@@ -12,12 +12,10 @@ const ArtSchema = new Schema({
     required: true,
   },
   description: {
-    type: String,
-    required: true,
+    type: String
   },
   creator: {
-    type: String,
-    required: true,
+    type: String
   },
   imageUrl: {
     type: String,
