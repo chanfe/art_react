@@ -1,4 +1,72 @@
 const Art = require('../models/artModel')
+const axios = require("axios")
+
+//support method find total number of viewable image in musium api
+const getData = async url => {
+    try {
+        //useing axios here
+
+      const response = await axios.get(url);
+      const data = response.data;
+
+      const random = Math.floor(Math.random() * Math.floor(data.total))
+      const url2 = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/' + data.objectIDs[random]
+      return await supportMethod(url2)
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+// get the data of a single art
+const supportMethod = async url => {
+    try {
+      const response = await axios.get(url);
+      const data = response.data;
+
+      return data
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
+// @desc   Get one random art from the museum api
+// @route  GET /api/v1/Art
+exports.randomArt = async (req, res, next) => {
+    try {
+        const url = 'https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=art'
+        const artData = await getData(url)
+        const {title, portfolio, artistDisplayName, objectID, primaryImage} = artData
+        console.log("starting find by id")
+        console.log(objectID)
+        const art = await Art.findById({_id: objectID});
+        console.log("art")
+        // if (!art) {
+        //     console.log("inbody")
+        //     let body = {
+        //         "_id": objectID,
+        //         "title": title,
+        //         "description": portfolio,
+        //         "creator": artistDisplayName,
+        //         "imageUrl": primaryImage
+        //     }
+        //     art = await Art.create(body);
+        //     console.log("created new art")
+        // }
+        
+      return res.status(200).json({
+        success: true,
+        data: art
+      });
+    } catch (error) {
+      res.status(500).json({
+        success: false,
+        error: 'Server error'
+      })
+    }
+}
 
 // @desc   Get all from Art
 // @route  GET /api/v1/Art
@@ -46,12 +114,14 @@ exports.showArt = async (req, res, next) => {
 // @route  POST /api/v1/Art
 exports.addArt = async (req, res, next) => {
     try {
+        console.log(req.body)
       const art = await Art.create(req.body);
       return res.status(200).json({
         success: true,
         data: art
       });
     } catch (error) {
+        console.log(error)
       res.status(500).json({
         success: false,
         error: 'Server error'

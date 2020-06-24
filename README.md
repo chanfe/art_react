@@ -81,6 +81,7 @@ Outline of Features:
 * [NodeJS](https://nodejs.org/)
 * [MongoDB](https://www.mongodb.com/)
 * [Express](https://expressjs.com/)
+* [axios](https://github.com/axios/axios)
 * [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/)
 
 

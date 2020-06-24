@@ -2,7 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const ArtSchema = new Schema({
-  name: {
+  _id: {
+    type: Number,
+    required: true,
+    },
+  title: {
     type: String,
     trim: true,
     required: true,
@@ -12,6 +16,10 @@ const ArtSchema = new Schema({
     required: true,
   },
   creator: {
+    type: String,
+    required: true,
+  },
+  imageUrl: {
     type: String,
     required: true,
   },
