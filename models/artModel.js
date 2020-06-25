@@ -3,6 +3,7 @@ const Schema = mongoose.Schema
 
 const ArtSchema = new Schema({
   _id: {
+    //change MongoDB UUid to a UUnumber provided by the Museum api
     type: Number,
     required: true,
     },

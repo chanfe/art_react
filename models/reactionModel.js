@@ -8,7 +8,8 @@ const ReactionSchema = new Schema({
     required: true,
   },
   art:{
-      type: Schema.Types.ObjectId,
+      //this is not a Schema.Types.ObjectID because I cast the Art Model into a number instead
+      type: Schema.Types.Number, 
       ref: "Art"
   },
   createdAt: {
