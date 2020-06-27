@@ -9,6 +9,8 @@ const ReactionsList = (props) =>{
     "last thing"
   ]
 
+  //fetch all here
+
   const eachTest = apes.map(text => {
     return <ListItems text={text}/>
   })

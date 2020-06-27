@@ -11,7 +11,8 @@ function App() {
     <div>
       <Title />
       <Picture />
-      <OReact />
+      {/* once reacted turn into a reaction list */}
+      <OReact /> 
       <ReactionsList />
     </div>
   );
