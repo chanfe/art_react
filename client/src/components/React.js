@@ -1,5 +1,7 @@
 import React from 'react';
-import { Container, Form, TextArea } from 'semantic-ui-react'
+import { Container, Form, TextArea, Dimmer, Loader} from 'semantic-ui-react'
+
+
 
 const OReact = (props) =>{
   return(

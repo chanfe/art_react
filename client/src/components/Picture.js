@@ -1,15 +1,50 @@
-import React from 'react';
+import React, {Component} from 'react';
 import testpicture from "../assets/test_image.jpg"
-import { Container } from 'semantic-ui-react'
+import { Container, Dimmer, Loader, Segment } from 'semantic-ui-react'
+import Title from './Title';
 
-
-const Picture = (props) =>{
-  return(
-    <Container>
-        <h1>Picture</h1>
-        <img src={testpicture} alt="test_image"/>
-    </Container>
+const renderLoadingPicture = () => {
+  return (
+    <Segment>
+      <Dimmer active inverted>
+        <Loader size='large'>Loading</Loader>
+      </Dimmer>
+    </Segment>
+      
   )
 }
+
+const renderPicture = (data) => {
+  return (
+    <Container>
+      <h1>{data.title}</h1>
+      <img src={data.imageUrl} alt={data.title}/>
+      <p>{data.description}</p>
+      <p>by {data.creator}</p>
+    </Container>
+  )
+
+}
+
+
+class Picture extends Component{
+  constructor(props){
+    super(props)
+    console.log(props)
+    this.state = {
+    }
+  }
+
+
+  componentDidUpdate() {
+    console.log(this.props)
+  }
+
+  render(){
+    return (this.props.isPictureLoaded? renderPicture(this.props.data) : renderLoadingPicture())
+  }
+
+}
+  
 
 export default Picture
