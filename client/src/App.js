@@ -1,7 +1,6 @@
 import React, { Component }  from 'react';
 import axios from 'axios';
 
-import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title'
 import Picture from './components/Picture'
@@ -17,12 +16,26 @@ class App extends Component{
       text:"",
       isPictureLoaded:false,
       randomdata:{
+        id:"",
         title:"",
         description:"",
         creator:"",
-        imageUrl:""
+        imageUrl:"",
+        reactions:[]
       }
     }
+  }
+
+  handleReacted = (data) => {
+    let reactions = this.state.randomdata.reactions
+    reactions.push(data)
+    this.setState({
+      reacted:!this.reacted,
+      randomdata:{
+        ...this.state.randomdata,
+        reactions:reactions
+      }
+    })
   }
 
   componentDidMount() {
@@ -32,10 +45,12 @@ class App extends Component{
         this.setState({
           isPictureLoaded:true,
           randomdata: {
+            id:random.data._id,
             title:random.data.title,
             description:random.data.description,
             creator:random.data.creator,
-            imageUrl:random.data.imageUrl
+            imageUrl:random.data.imageUrl,
+            reactions:random.data.reactions
           }
         });
       })
@@ -48,7 +63,7 @@ class App extends Component{
       <Title />
       <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
       {/* once reacted turn into a reaction list */}
-      {this.state.reacted ? <ReactionsList /> : <OReact /> }
+      {this.state.reacted ? <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/> : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
 
     </div>);
   }

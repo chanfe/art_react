@@ -1,27 +1,43 @@
-import React from 'react';
+import React, {Component} from 'react';
+import axios from 'axios'
 import { Container, List, Image } from 'semantic-ui-react'
 import ListItems from './ReactionsListItem'
 
-const ReactionsList = (props) =>{
-  const apes = [
-    "hi test",
-    "nothing",
-    "last thing"
-  ]
+class ReactionsList extends Component {
+
+  constructor(props){
+    super(props)
+    this.state = {
+      reactions:[]
+    }
+  }
 
   //fetch all here
 
-  const eachTest = apes.map(text => {
-    return <ListItems text={text}/>
-  })
-  return(
-    <Container>
-        <List celled>
-          {eachTest}
+  componentDidMount() {
+    axios.get(`http://localhost:4000/api/v1/Art/` + this.props.ObjectId + `/reactions`)
+      .then(res => {
+        this.setState({
+          reactions:res.data.data
+        });
+      })
+  }
 
-        </List>
-    </Container>
-  )
+  render() {
+    let listedReact = this.state.reactions.map(reaction => {
+        return <ListItems text={reaction}></ListItems>
+    })
+
+    console.log(listedReact)
+
+    return(
+      <Container>
+          <List celled>
+            {listedReact}
+          </List>
+      </Container>
+    )
+  }
 }
 
 export default ReactionsList

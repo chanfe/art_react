@@ -30,18 +30,19 @@ const renderPicture = (data) => {
 class Picture extends Component{
   constructor(props){
     super(props)
-    console.log(props)
     this.state = {
     }
   }
 
 
   componentDidUpdate() {
-    console.log(this.props)
   }
 
   render(){
-    return (this.props.isPictureLoaded? renderPicture(this.props.data) : renderLoadingPicture())
+    return (
+      this.props.isPictureLoaded ? 
+      renderPicture(this.props.data) 
+      : renderLoadingPicture())
   }
 
 }
