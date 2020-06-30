@@ -1,10 +1,11 @@
 const express = require('express');
 const reactionRouter = express.Router();
 
-const { getReaction, addReaction, updateReaction, deleteReaction } = require('../controllers/reaction');
+const { getReaction, showReaction, addReaction, updateReaction, deleteReaction } = require('../controllers/reaction');
 
 
 reactionRouter.route('/:id')
+  .get(showReaction)
   .post(addReaction)
   .delete(deleteReaction)
 

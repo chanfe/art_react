@@ -62,7 +62,7 @@ exports.addReaction = async (req, res, next) => {
       }
       console.log(body)
       const reaction = await Reaction.create(body);
-      
+
       //add reaction id to Art ID array
       art.reactions.push(reaction)
       art.save()

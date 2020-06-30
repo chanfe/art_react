@@ -1,10 +1,13 @@
 const express = require('express');
 const artRouter = express.Router();
 
-const { getArt, addArt, updateArt, deleteArt, showArt, randomArt } = require('../controllers/art');
+const { getArt, addArt, updateArt, deleteArt, showArt, randomArt, showArtReactions} = require('../controllers/art');
 
 artRouter.route('/random')
   .get(randomArt)
+
+artRouter.route('/:id/reactions')
+  .get(showArtReactions)
 
 artRouter.route('/:id')
   .get(showArt)

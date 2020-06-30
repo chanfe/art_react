@@ -1,4 +1,6 @@
 const Art = require('../models/artModel')
+const Reaction = require('../models/reactionModel')
+
 const axios = require("axios")
 
 //support method find total number of viewable image in musium api
@@ -107,6 +109,38 @@ exports.showArt = async (req, res, next) => {
         error: 'Server error'
       })
     }
+}
+
+// @desc   Get one from Art
+// @route  GET /api/v1/Art/:id/reactions
+exports.showArtReactions = async (req, res, next) => {
+  try {
+      const art = await Art.findById(req.params.id);
+      if (!art) {
+          res.status(404).json({
+              success: false,
+              error: 'Not Found'
+          });
+      }
+
+      const reactions = await Promise.all(art.reactions.map(async reaction => {
+        let temp = await Reaction.findById(reaction)
+        return temp.reaction
+        })
+      )
+      
+      return res.status(200).json({
+          success: true,
+          data: reactions
+      });
+      
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      success: false,
+      error: 'Server error'
+    })
+  }
 }
   
 // @desc   Add to Art
