@@ -6,6 +6,7 @@ import Title from './components/Title'
 import Picture from './components/Picture'
 import OReact from './components/React'
 import ReactionsList from './components/ReactionsList'
+import Reload from './components/Reload'
 
 class App extends Component{
 
@@ -63,7 +64,12 @@ class App extends Component{
       <Title />
       <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
       {/* once reacted turn into a reaction list */}
-      {this.state.reacted ? <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/> : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+      {this.state.reacted ?
+      <div>
+        <Reload />
+        <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
+      </div>
+      : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
 
     </div>);
   }

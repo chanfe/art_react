@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
-import testpicture from "../assets/test_image.jpg"
+import defaultpicture from "../assets/Default_Image_Thumbnail.png"
 import { Container, Dimmer, Loader, Segment, Image } from 'semantic-ui-react'
-import Title from './Title';
 
 const renderLoadingPicture = () => {
   return (
-    <Segment>
-      <Dimmer active inverted>
-        <Loader size='large'>Loading</Loader>
-      </Dimmer>
-    </Segment>
+    <Container>
+      <Segment>
+        <Image src={defaultpicture} fluid />
+        <Dimmer active inverted>
+          <Loader size='large'>Loading</Loader>
+        </Dimmer>
+      </Segment>
+    </Container>
+    
       
   )
 }
@@ -19,31 +22,19 @@ const renderPicture = (data) => {
     <Container>
       <h1>{data.title}</h1>
       <Image src={data.imageUrl} fluid />
-      <p>{data.description}</p>
-      <p>by {data.creator}</p>
+      {data.description? <p>{data.description}</p>: <div></div>}
+      {data.creator? <p>by {data.creator}</p>: <div></div>}
     </Container>
   )
 
 }
 
 
-class Picture extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
-    }
-  }
-
-
-  componentDidUpdate() {
-  }
-
-  render(){
-    return (
-      this.props.isPictureLoaded ? 
-      renderPicture(this.props.data) 
-      : renderLoadingPicture())
-  }
+const Picture = (props) => {
+  return (
+    props.isPictureLoaded ? 
+    renderPicture(props.data) 
+    : renderLoadingPicture())
 
 }
   
