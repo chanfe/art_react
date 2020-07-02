@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import { Container, List, Image } from 'semantic-ui-react'
+import { Container, List } from 'semantic-ui-react'
 import ListItems from './ReactionsListItem'
 
 class ReactionsList extends Component {
