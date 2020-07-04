@@ -49,13 +49,12 @@ class Picture extends Component{
   }
 
   render(){
-
     return (
     this.props.isPictureLoaded ? 
     renderPicture(this.props.data) 
     : renderLoadingPicture())
   }
-  
+
 }
   
 
