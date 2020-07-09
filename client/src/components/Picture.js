@@ -30,6 +30,7 @@ const renderPicture = (data) => {
       <br />
       <br />
       <br />
+      
       {data.description? <p>{data.description}</p>: <div></div>}
       {data.creator? <p>by {data.creator}</p>: <div></div>}
     </Container>
