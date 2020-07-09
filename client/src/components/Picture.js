@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import defaultpicture from "../assets/Default_Image_Thumbnail.png"
 import './Picture.scss'
 
-import { Container, Dimmer, Loader, Segment, Image} from 'semantic-ui-react'
+import { Container, Dimmer, Loader, Segment, Image, Header} from 'semantic-ui-react'
 
 const renderLoadingPicture = () => {
   return (
@@ -23,14 +23,12 @@ const renderPicture = (data) => {
 
   return (
     <Container>
-      <h1>{data.title}</h1>
-      <br />
-
-      <img id="picture" src={data.imageUrl} alt={data.title} />
-      <br />
-      <br />
-      <br />
+      <Container>
+        <Header as='h1' textAlign='center'>{data.title}</Header>
+      </Container>
       
+      <img id="picture" src={data.imageUrl} alt={data.title} />
+
       {data.description? <p>{data.description}</p>: <div></div>}
       {data.creator? <p>by {data.creator}</p>: <div></div>}
     </Container>
