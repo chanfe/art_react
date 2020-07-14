@@ -33,7 +33,7 @@ class OReact extends Component{
       <Container>
         <Form onSubmit={this.handleSubmit}>
           <Form.TextArea label='Reaction' placeholder='What is your reaction to this art?' value={this.state.value} onChange={this.handleChange}/>
-          <Form.Button>Submit</Form.Button>
+          <Form.Button floated='right'>Submit</Form.Button>
         </Form>
       </Container>
     )

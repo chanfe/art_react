@@ -7,6 +7,10 @@ import Picture from './components/Picture'
 import OReact from './components/React'
 import ReactionsList from './components/ReactionsList'
 import Reload from './components/Reload'
+import Footer from './components/Footer'
+
+import { Divider } from 'semantic-ui-react'
+
 
 class App extends Component{
 
@@ -70,6 +74,8 @@ class App extends Component{
         <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
       </div>
       : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+      <Divider clearing/>
+      <Footer />
 
     </div>);
   }
