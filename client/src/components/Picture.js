@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import defaultpicture from "../assets/Default_Image_Thumbnail.png"
 import './Picture.scss'
 
-import { Container, Dimmer, Loader, Segment, Image, Header} from 'semantic-ui-react'
+import { Container, Dimmer, Loader, Segment, Image, Header, Modal} from 'semantic-ui-react'
 
 const renderLoadingPicture = () => {
   return (
@@ -26,9 +26,11 @@ const renderPicture = (data) => {
       <Container>
         <Header as='h1' textAlign='center'>{data.title}</Header>
       </Container>
-      
-      <img id="picture" src={data.imageUrl} alt={data.title} />
 
+      <Modal trigger={<img id="picture" src={data.imageUrl} alt={data.title} />}>
+        <Image src={data.imageUrl} fluid />
+      </Modal>
+      
       {data.description? <p>{data.description}</p>: <div></div>}
       {data.creator? <p>by {data.creator}</p>: <div></div>}
     </Container>

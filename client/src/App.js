@@ -9,7 +9,7 @@ import ReactionsList from './components/ReactionsList'
 import Reload from './components/Reload'
 import Footer from './components/Footer'
 
-import { Divider } from 'semantic-ui-react'
+import { Divider, Grid } from 'semantic-ui-react'
 
 
 class App extends Component{
@@ -66,14 +66,26 @@ class App extends Component{
   render(){
     return (<div>
       <Title />
-      <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
+      <Divider clearing/>
+      <Grid columns={2} divided>
+        <Grid.Row stretched>
+          <Grid.Column>
+            <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
+          </Grid.Column>
+
+          <Grid.Column>
+            {this.state.reacted ?
+              <div>
+                <Reload />
+                <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
+              </div>
+              : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+          </Grid.Column>
+
+        </Grid.Row>
+      </Grid>
       {/* once reacted turn into a reaction list */}
-      {this.state.reacted ?
-      <div>
-        <Reload />
-        <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
-      </div>
-      : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+      
       <Divider clearing/>
       <Footer />
 
