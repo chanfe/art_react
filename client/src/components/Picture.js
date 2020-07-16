@@ -11,6 +11,7 @@ const renderLoadingPicture = () => {
         <Image src={defaultpicture} fluid />
         <Dimmer active inverted>
           <Loader size='large'>Loading</Loader>
+          
         </Dimmer>
       </Segment>
     </Container>
