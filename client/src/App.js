@@ -17,6 +17,7 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
+      url:"http://localhost:4000",
       reacted:false,
       text:"",
       isPictureLoaded:false,
@@ -44,7 +45,7 @@ class App extends Component{
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:4000/api/v1/Art/random`)
+    axios.get(this.state.url + `/api/v1/Art/random`)
       .then(res => {
         const random = res.data;
         this.setState({
@@ -83,9 +84,7 @@ class App extends Component{
           </Grid.Column>
 
         </Grid.Row>
-      </Grid>
-      {/* once reacted turn into a reaction list */}
-      
+      </Grid>      
       <Divider clearing/>
       <Footer />
 
