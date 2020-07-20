@@ -83,7 +83,7 @@ Outline of Features:
 * [Express](https://expressjs.com/)
 * [axios](https://github.com/axios/axios)
 * [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/)
-
+* [Semantic UI React](https://react.semantic-ui.com/)
 
 
 <!-- MockUp of the Application (to be removed) -->
