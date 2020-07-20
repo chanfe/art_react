@@ -65,7 +65,7 @@ class App extends Component{
   
   
   render(){
-    return (<div>
+    return (<div id="main">
       <Title />
       <Divider clearing/>
       <Grid columns={2} divided>

@@ -31,12 +31,12 @@ class OReact extends Component{
     return(
       <Container>
         <Form onSubmit={this.handleSubmit}>
+          <label> <h3 id='label'>Share your impression</h3> </label>
           <Form.Field
             id='comment'
             control={TextArea}
             rows='6'
-            label='Reaction' 
-            placeholder='What is your reaction to this art?' 
+            placeholder='Share your thoughts to this art?' 
             value={this.state.value} 
             onChange={this.handleChange}
           />
