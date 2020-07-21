@@ -9,7 +9,7 @@ import ReactionsList from './components/ReactionsList'
 import Reload from './components/Reload'
 import Footer from './components/Footer'
 
-import { Divider, Grid } from 'semantic-ui-react'
+import { Divider, Grid, Responsive } from 'semantic-ui-react'
 
 
 class App extends Component{
@@ -68,23 +68,37 @@ class App extends Component{
     return (<div id="main">
       <Title />
       <Divider clearing/>
-      <Grid columns={2} divided>
-        <Grid.Row stretched>
-          <Grid.Column>
-            <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
-          </Grid.Column>
+      <Responsive minWidth={767}>
+        <Grid columns={2} divided>
+          <Grid.Row stretched>
+              <Grid.Column>
+                <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
+              </Grid.Column>
 
-          <Grid.Column>
-            {this.state.reacted ?
-              <div>
-                <Reload />
-                <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
-              </div>
-              : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
-          </Grid.Column>
+              <Grid.Column>
+                {this.state.reacted ?
+                  <div>
+                    <Reload />
+                    <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
+                  </div>
+                  : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+              </Grid.Column>
 
-        </Grid.Row>
-      </Grid>      
+          </Grid.Row>
+        </Grid> 
+      </Responsive>
+          
+
+      <Responsive maxWidth={767}>
+        <Picture data={this.state.randomdata} isPictureLoaded={this.state.isPictureLoaded}/>
+        {this.state.reacted ?
+          <div>
+            <Reload />
+            <ReactionsList reactions={this.state.randomdata.reactions} ObjectId={this.state.randomdata.id}/>
+          </div>
+          : <OReact ObjectId={this.state.randomdata.id} handleReacted={this.handleReacted}/> }
+      
+      </Responsive>
       <Divider clearing/>
       <Footer />
 
