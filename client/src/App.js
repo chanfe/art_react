@@ -45,7 +45,7 @@ class App extends Component{
   }
 
   componentDidMount() {
-    axios.get(this.state.url + `/api/v1/Art/random`)
+    axios.get(`/api/v1/Art/random`)
       .then(res => {
         const random = res.data;
         this.setState({
