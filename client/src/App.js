@@ -17,7 +17,7 @@ class App extends Component{
   constructor(props){
     super(props)
     this.state = {
-      url:"http://localhost:4000",
+      url:"https://stormy-bayou-08714.herokuapp.com/",
       reacted:false,
       text:"",
       isPictureLoaded:false,
