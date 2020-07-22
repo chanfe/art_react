@@ -9,6 +9,7 @@
     "start": "node server",
     "server": "nodemon --ignore './client/' server",
     "client": "npm start --prefix client",
+    "heroku-postbuild": "cd client && npm install && npm run build",
     "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "dependencies": {
