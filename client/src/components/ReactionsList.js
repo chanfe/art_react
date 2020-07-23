@@ -15,7 +15,7 @@ class ReactionsList extends Component {
   //fetch all here
 
   componentDidMount() {
-    axios.get(`http://localhost:4000/api/v1/Art/` + this.props.ObjectId + `/reactions`)
+    axios.get(`/api/v1/Art/` + this.props.ObjectId + `/reactions`)
       .then(res => {
         this.setState({
           reactions:res.data.data

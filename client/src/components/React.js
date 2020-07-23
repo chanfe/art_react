@@ -20,7 +20,7 @@ class OReact extends Component{
   }
 
   handleSubmit = (event) => {
-    axios.post(`http://localhost:4000/api/v1/Reaction/` + this.props.ObjectId, {reaction: this.state.value})
+    axios.post(`/api/v1/Reaction/` + this.props.ObjectId, {reaction: this.state.value})
       .then(res => {
         this.props.handleReacted(res.data.data._id)
       })
