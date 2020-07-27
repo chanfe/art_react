@@ -1,21 +1,21 @@
-import React, { Component }  from 'react';
-import axios from 'axios';
+import React, { Component }  from "react";
+import axios from "axios";
 
-import './App.css';
-import Title from './components/Title'
-import Picture from './components/Picture'
-import OReact from './components/React'
-import ReactionsList from './components/ReactionsList'
-import Reload from './components/Reload'
-import Footer from './components/Footer'
+import "./App.css";
+import Title from "./components/Title";
+import Picture from "./components/Picture";
+import OReact from "./components/React";
+import ReactionsList from "./components/ReactionsList";
+import Reload from "./components/Reload";
+import Footer from "./components/Footer";
 
-import { Divider, Grid, Responsive } from 'semantic-ui-react'
+import { Divider, Grid, Responsive } from "semantic-ui-react";
 
 
 class App extends Component{
 
   constructor(props){
-    super(props)
+    super(props);
     this.state = {
       url:"https://stormy-bayou-08714.herokuapp.com/",
       reacted:false,
@@ -29,24 +29,24 @@ class App extends Component{
         imageUrl:"",
         reactions:[]
       }
-    }
+    };
   }
 
   handleReacted = (data) => {
-    let reactions = this.state.randomdata.reactions
-    reactions.push(data)
+    let reactions = this.state.randomdata.reactions;
+    reactions.push(data);
     this.setState({
       reacted:!this.reacted,
       randomdata:{
         ...this.state.randomdata,
         reactions:reactions
       }
-    })
+    });
   }
 
   componentDidMount() {
     axios.get(`/api/v1/Art/random`)
-      .then(res => {
+      .then((res) => {
         const random = res.data;
         this.setState({
           isPictureLoaded:true,

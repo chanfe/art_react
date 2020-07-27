@@ -1,9 +1,10 @@
-import React from 'react';
-import { Container, Form, Button } from 'semantic-ui-react'
-import './Reload.scss'
+import React from "react";
+import { Container, Form, Button } from "semantic-ui-react";
+import "./Reload.scss";
+
 const onSubmit = (event) => {
-    window.location.reload()
-}
+    window.location.reload();
+};
 
 const Reload = (props) => {
   return (
@@ -14,9 +15,7 @@ const Reload = (props) => {
             </div>
           </Form>
       </Container>
-    )
+    );
+}  
 
-}
-  
-
-export default Reload
+export default Reload;

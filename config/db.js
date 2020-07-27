@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const connectDB = async () => {
   try {
@@ -9,11 +9,11 @@ const connectDB = async () => {
       useFindAndModify: false
     });
 
-    console.log('MongoDB connected');
+    console.log("MongoDB connected");
   } catch (error) {
     console.log(`Error connecting to DB: ${error.message}`);
     process.exit(1);
   }
-}
+};
 
 module.exports = connectDB;
