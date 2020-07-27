@@ -33,7 +33,7 @@
   <h3 align="center"># art_react (tentative name)</h3>
 
   <p align="center">
-    Equipment Tracker and Maintenance  Log
+    Art Reaction
     <br />
     <a href="https://github.com/chanfe/art_react"><strong>Explore the docs »</strong></a>
     <br />
@@ -114,14 +114,14 @@ npm start
 <!-- USAGE EXAMPLES -->
 ## Usage
 Once at the page you can react to the artwork.  Once reacted you can view other reaction to the same artwork or click random to react to a differant art.
-<!--_For more examples, you can goto our sample website [Here].(https://tracker-21.herokuapp.com/)_ -->
+_For more examples, you can goto our sample website [Here].(https://art-react.herokuapp.com/)_
 
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
+<!-- See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues). -->
 
 
 
