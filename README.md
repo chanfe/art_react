@@ -5,10 +5,6 @@
 *** Thanks again! Now go create something AMAZING! :D
 -->
 
-
-
-
-
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -20,8 +16,6 @@
 [![Build Status][build-shield]][build-url]
 [![Contributors][contributors-shield]][contributors-url]
 [![MIT License][license-shield]][license-url]
-
-
 
 <!-- PROJECT LOGO -->
 <br />
@@ -46,45 +40,38 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-- [Table of Contents](#Table-of-Contents)
-- [About The Project](#About-The-Project)
+  - [Table of Contents](#Table-of-Contents)
+  - [About The Project](#About-The-Project)
   - [Built With](#Built-With)
-- [Mock up of the application (to be)](#Mock-up-of-the-application-to-be)
+  - [Mock up of the application (to be)](#Mock-up-of-the-application-to-be)
   - [Prerequisites](#Prerequisites)
   - [Installation](#Installation)
-- [Usage](#Usage)
-- [Roadmap](#Roadmap)
-- [Contributing](#Contributing)
-- [License](#License)
-- [Contact](#Contact)
-- [Acknowledgements](#Acknowledgements)
-
-
+  - [Usage](#Usage)
+  - [Roadmap](#Roadmap)
+  - [Contributing](#Contributing)
+  - [License](#License)
+  - [Contact](#Contact)
+  - [Acknowledgements](#Acknowledgements)
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 Should have a random art for you to react and other people reaction after you react.
 
-
 Outline of Features:
-* Record reaction of people first view the artwork.
-
+  - Record reaction of people first view the artwork.
 
 ### Built With
-* [ReactJS](https://reactjs.org)
-* [NodeJS](https://nodejs.org/)
-* [MongoDB](https://www.mongodb.com/)
-* [Express](https://expressjs.com/)
-* [axios](https://github.com/axios/axios)
-* [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/)
-* [Semantic UI React](https://react.semantic-ui.com/)
-
+  - [ReactJS](https://reactjs.org)
+  - [NodeJS](https://nodejs.org/)
+  - [MongoDB](https://www.mongodb.com/)
+  - [Express](https://expressjs.com/)
+  - [axios](https://github.com/axios/axios)
+  - [The Metropolitan Museum of Art Collection API](https://metmuseum.github.io/)
+  - [Semantic UI React](https://react.semantic-ui.com/)
 
 <!-- MockUp of the Application (to be removed) -->
 ## Mock up of the application (to be)
@@ -93,28 +80,28 @@ Outline of Features:
 ![](client/src/assets/Relationship.png)
 
 ### Prerequisites
-1. 
-```
-```
+  1. 
+  ```
+  ```
 
 ### Installation
-1. Clone the repo
-```sh
-git clone https:://github.com/your_username_/Project-Name.git
-```
-2. Install NPM packages
-```sh
-npm install
-```
-3. Start local website
-```sh
-npm start
-```
+  1. Clone the repo
+  ```sh
+  git clone https:://github.com/your_username_/Project-Name.git
+  ```
+  2. Install NPM packages
+  ```sh
+  npm install
+  ```
+  3. Start local website
+  ```sh
+  npm start
+  ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 Once at the page you can react to the artwork.  Once reacted you can view other reaction to the same artwork or click random to react to a differant art.
-_For more examples, you can goto our sample website [Here].(https://art-react.herokuapp.com/)_
+_For more examples, you can goto our sample website [Here](https://art-react.herokuapp.com/)._
 
 
 
