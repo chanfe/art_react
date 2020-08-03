@@ -4,7 +4,7 @@
   "main": "server.js",
   "author": "Felix Chan",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://art-react.herokuapp.com/",
   "scripts": {
     "start": "node server",
     "server": "nodemon --ignore './client/' server",
