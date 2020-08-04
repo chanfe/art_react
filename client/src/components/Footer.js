@@ -1,7 +1,7 @@
 import React from 'react';
-import { Container, Divider } from 'semantic-ui-react'
+import { Container } from 'semantic-ui-react'
 
-const Title = (props) =>{
+const Footer = (props) =>{
   return(
     <Container textAlign='center'>
         <p>Images © <a href="https://www.metmuseum.org/">Harvard Art Museums</a></p>
@@ -10,4 +10,4 @@ const Title = (props) =>{
   )
 }
 
-export default Title
+export default Footer
