@@ -60,7 +60,6 @@ exports.addReaction = async (req, res, next) => {
         ...(req.body),
         art:req.params.id
       }
-      console.log(body)
       const reaction = await Reaction.create(body);
 
       //add reaction id to Art ID array
